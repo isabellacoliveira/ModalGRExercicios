@@ -1,0 +1,82 @@
+<!-- colocar logo e fazer botão para limpar-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feira de Tecnologia | ModalGR</title>
+  <style type="text/css" media="screen">
+        .titulo{
+                text-shadow: 1px 2px 3px black;
+        }
+        body {
+              background-color: #6495ED;
+        }
+        .nome {
+                margin:  0 auto;
+                display: flex;
+                width: 50vw;
+                justify-content: space-around;
+                margin-top: 50px
+        }
+        #paragrafo {
+                      font-weight: bold; 
+
+        }
+        #l1 {
+                font-weight: bold; 
+
+        }
+
+  </style>
+      <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+      <script type="text/javascript">
+       function cracha() {
+          const cracha = document.getElementById("cracha").value
+          const adicionar = cracha.trim().split(' ')
+                 // console.log("nome separado",adicionar)
+          const nomeCaps =  adicionar[adicionar.length - 1].toUpperCase()
+          // slice: para cortar a lista 
+          const sobrenome = adicionar.slice(0, adicionar.length - 1) // pega do 0 até o 2
+          const abreviarNome = sobrenome.map(function (item){
+            if(item != 'de' && item != 'da' && item != 'das' && item != 'do' && item != 'dos' && item != 'e'){
+              // split: separa em várias letras 
+             // return item.split('')[0] + '.';
+              return item.charAt(0) + '.'
+            }
+          }) // devolve uma lista com as letras da palavra
+          // return item.charAt(0) + '.'; 
+          const tirarUndefined = abreviarNome.filter(function(item){
+              return item != undefined 
+          }) // nomesTratados.filter(item => item != undefined)
+        const transformarDeVolta = tirarUndefined.join(' ')
+        const final = nomeCaps + ', ' + transformarDeVolta
+       alert(final)
+          
+      }
+// slice trim 
+
+      </script>
+
+</head>
+<body>
+<header style="background: #191970; padding: 20px 50px; color: #1E90FF;">
+    <h1 style="text-align: center;">
+                                            Modal GR <br>
+
+  <span class="titulo" style="font-family: 'Pacifico', cursive; font-size: 90px; line-height: 90px">
+                                                  Feira de Tecnologia </span>
+  </h1>
+  </header> 
+  <div id="paragrafo">
+    <p>Seja bem-vindo à 100º Feira de Tecnologia da ModalGR. A ModalGR é uma Consultoria de Negócios e Tecnologia da Informação que se mantêm constantemente ao lado de sua equipe, contamos com sua presença!</p>
+  </div>
+  <div>
+    <label id="l1"> Para nossa segurança é necessário que todos estejam identificados, através do crachá: 
+    <input type="text" name="nome" required placeholder="insira o nome do colaborador" class="nome" id="cracha">
+  </label>
+        <button id="b1" onclick="cracha()">Preparar Crachá</button>
+
+  </div>
+</body>
+</html>

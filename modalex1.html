@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Restaurante | ModalGR </title>
+<style type="text/css">
+              .titulo {
+                     text-shadow: 1px 2px 3px black; 
+            }
+            .container {
+                          display: flex;
+                          width: 100vw;
+                          justify-content: space-around;
+                          margin-top: 50px
+
+            }
+
+            .container label {
+                        font-weight: bold; 
+            }
+
+            body {
+                  background-color: #F5DEB3 ;
+            }
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <script>
+       function custoPrato () {
+        let kg = document.getElementById("kg").value;
+        let tara = document.getElementById("tara").value;
+        let peso = document.getElementById("peso").value;
+        let pesoLiquido = peso - tara
+        let custo = (kg * (peso - tara)) 
+        //let gramas = (pesoLiquido) * 1000
+       
+        
+        let valor = custo.toFixed(2).toString().replace(".", ",")
+        let valor1 = pesoLiquido.toFixed(2).toString().replace(".", ",")
+
+       //custo = `${custo.toFixed(2).toString().replace(".", ",")}`
+
+        alert("O prato de " + valor1 + " gramas custa: R$" + valor);
+         // custo = `${custo.toFixed(2).toString().replace(".", ",")}`
+  
+      // return `O prato de ${kg} gramas custa: R$ ${custo}`
+} 
+
+
+  </script>
+
+</head>
+ 
+<body style="margin: 0; padding: 0;">
+  <header style="background: #FFA500; padding: 20px 50px; color: #FF8C00;">
+    <h1 style="text-align: center;">
+                                            Modal GR <br>
+
+  <span class="titulo" style="font-family: 'Pacifico', cursive; font-size: 90px; line-height: 90px">
+                                                  Restaurante </span>
+  </h1>
+  </header> 
+<div id="explicar">
+  <p>Instruções:</p>
+  <p>
+    <ol>
+      <li>incialmente, deve-se inserir o valor do kilograma em reais</li>
+      <li>depois, será inserido o valor da tara do prato (lembrando que o mesmo será descontado do peso através do sistema)</li>
+      <li>por último, insira o valor do peso do prato (em kg), o sistema calculará o custo do prato exibindo o peso do prato (sem a tara) seguido do valor que deve ser pago.</li>
+    </ol>
+</p>
+    
+</div>
+
+  <div class="container">
+      <label> Valor por Kg (em reais)<input type="number" placeholder="insira o valor do kg" id="kg" required> </label>
+      <label> Tara do prato (em kg) <input type="number" placeholder="insira a tara do prato" id="tara" required> </label> 
+      <label> Peso do prato  (em kg)<input type="number" placeholder="insira o peso do prato" id="peso" required> </label> 
+      <button id="b1" onclick="custoPrato()">Calcular</button>
+  </div>
+
+  </body>
+</html>
+  
+  
+  
+  
+  
+  
+  

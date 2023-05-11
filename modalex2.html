@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Números & Strings | ModalGR </title>
+<style type="text/css">
+              .titulo {
+                     text-shadow: 1px 2px 3px black; 
+            }
+            .container {
+                          display: flex;
+                          width: 100vw;
+                          justify-content: space-around;
+                          margin-top: 50px
+
+            }
+
+            .container label {
+                        font-weight: bold; 
+            }
+
+            body {
+                  background-color: #A9A9A9 ;
+            }
+            .explicacao p {
+                         display: flex;
+                          width: 100vw;
+                          justify-content: space-around;
+                          margin-top: 50px
+            }
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <script>
+    
+    function paraB1(){
+      //  os dados não possuem um limite fixo
+   let entrada = 'Ana, 89,78 , Maria , 45.8 , 27 , 56 , Paula Pereira , 978 , A , VIVA , 35 , 125 , 8999';
+
+    const splitado = entrada.split(', ');
+
+    const numeros = []
+    const string = []
+
+    splitado.forEach(item =>{
+       if(isNaN(item.replace(',', '.'))) {
+          string.push(item)
+      } else {
+         numeros.push(item)
+    }
+  })
+
+
+    alert(numeros)
+    
+       }
+
+       function paraB2(){
+   let entrada = 'Ana, 89,78 , Maria , 45.8 , 27 , 56 , Paula Pereira , 978 , A , VIVA , 35 , 125 , 8999';
+
+    const splitado = entrada.split(', ');
+
+    const numeros = []
+    const string = []
+
+    splitado.forEach(item =>{
+       if(isNaN(item.replace(',', '.'))) {
+          string.push(item)
+      } else {
+         numeros.push(item)
+    }
+  })
+
+
+    alert(string)
+    
+       }
+
+
+
+
+  </script>
+
+</head>
+ 
+<body style="margin: 0; padding: 0;">
+  <header style="background: #1C1C1C; padding: 20px 50px; color: #A9A9A9;">
+    <h1 style="text-align: center;">
+                                            Modal GR <br>
+
+  <span class="titulo" style="font-family: 'Pacifico', cursive; font-size: 90px; line-height: 90px">
+                                                  Arrays </span>
+  </h1>
+  </header> 
+<div class="explicacao">
+  <p>utilizaremos os métodos "forEach", "split", "replace" e "push" para separar dados numéricos de strings que foram inseridos em uma variável(let) inicialmente, para isso, clique nos botões abaixo: </p>
+  <p>'Ana, 89,78 , Maria , 45.8 , 27 , 56 , Paula Pereira , 978 , A , VIVA , 35 , 125 , 8999'</p>  
+</div>
+
+  <div class="container">
+
+      <label>Para exibir somente o array de Strings<button id="b2" onclick="paraB2()">Clique aqui</button></label>
+      <label>Para exibir somente o array de Números<button id="b1" onclick="paraB1()">Calcular</button></label>
+
+  </div>
+
+  </body>
+</html>
+  
+  
+  
+  
+  
+  
+  
